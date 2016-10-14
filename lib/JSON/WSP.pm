@@ -15,21 +15,25 @@ module JSON::WSP {
             has Str         $.type;  # this doesn't quite cover "multi-type"
         }
         class Parameter {
+            has Str         @.doc_lines;
+            has Int         $.def_order;
+            has Str         $.type;
+            has Bool        $.optional;
 
         }
         has Str         @.doc_lines;
-        has             %.params;
+        has Parameter   %.params;
         has ReturnInfo  $.ret_info; 
 
     }
 
-    class Description {
+    class Description does JSON::Class {
         has Str $.type;
         has Version $.version;
         has Str $.servicename;
         has Str $.url;
         has %.types;  
-        has %.methods;
+        has Method %.methods;
     }
 
     class Request {
@@ -37,7 +41,5 @@ module JSON::WSP {
 
     class Response {
     }
-
-
 }
 # vim: expandtab shiftwidth=4 ft=perl6
