@@ -14,7 +14,7 @@ lives-ok {
 
 }, "can make description from JSON";
 
-diag $description.perl;
+diag $description.to-json;
 
 done-testing;
 # vim: expandtab shiftwidth=4 ft=perl6

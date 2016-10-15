@@ -9,10 +9,14 @@ module JSON::WSP {
         }
     }
 
+    sub unmarshall-version(Str $ver) {
+        Version.new($ver);
+    }
+
     class Method {
         class ReturnInfo {
             has Str         @.doc_lines;
-            has Str         $.type;  # this doesn't quite cover "multi-type"
+            has Str @.type;  # this doesn't quite cover "multi-type"
         }
         class Parameter {
             has Str         @.doc_lines;
@@ -28,12 +32,12 @@ module JSON::WSP {
     }
 
     class Description does JSON::Class {
-        has Str $.type;
-        has Version $.version;
-        has Str $.servicename;
-        has Str $.url;
-        has %.types;  
-        has Method %.methods;
+        has Str     $.type;
+        has Version $.version       is marshalled-by('Str') is unmarshalled-by(&unmarshall-version);
+        has Str     $.servicename;
+        has Str     $.url;
+        has         %.types;  
+        has Method  %.methods;
     }
 
     class Request {
