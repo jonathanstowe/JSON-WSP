@@ -40,7 +40,7 @@ module JSON::WSP {
         has Method  %.methods;
     }
 
-    class Request {
+    class Request does JSON::Class {
         has Str     $.type;
         has Version $.version       is marshalled-by('Str') is unmarshalled-by(&unmarshall-version);
         has Str     $.methodname;
@@ -48,12 +48,27 @@ module JSON::WSP {
         has         $.mirror;
     }
 
-    class Response {
+    class Response does JSON::Class {
         has Str     $.type;
         has Version $.version       is marshalled-by('Str') is unmarshalled-by(&unmarshall-version);
         has Str     $.servicename;
         has Str     $.methodname;
         has         $.result;
+        has         $.reflection;
+    }
+
+    class Fault {
+        has Str     $.code;
+        has Str     $.string;
+        has Str     @.detail;
+        has Str     $.filename;
+        has Int     $.lineno;
+
+    }
+    class FaultResponse does JSON::Class {
+        has Str     $.type;
+        has Version $.version       is marshalled-by('Str') is unmarshalled-by(&unmarshall-version);
+        has Fault   $.fault;
         has         $.reflection;
     }
 }
