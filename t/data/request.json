@@ -1,0 +1,14 @@
+{
+    "type": "jsonwsp/request",
+    "version": "1.0",
+    "methodname": "createUser",
+    "args": {
+        "username": "bettyw",
+        "given_name": "Betty",
+        "surname": "Wilson",
+        "mobile": "555-3423444"
+    },
+    "mirror": {
+        "id": 2
+    }
+}
