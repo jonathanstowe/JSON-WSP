@@ -1,0 +1,14 @@
+{
+    "type": "jsonwsp/response",
+    "version": "1.0",
+    "servicename": "UserService",
+    "methodname": "createUser",
+    "result": {
+        "user_id": 324,
+        "success": true
+    },
+    "reflection": {
+        "id": 2
+    }
+}
+
