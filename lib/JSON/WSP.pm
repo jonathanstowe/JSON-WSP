@@ -41,9 +41,20 @@ module JSON::WSP {
     }
 
     class Request {
+        has Str     $.type;
+        has Version $.version       is marshalled-by('Str') is unmarshalled-by(&unmarshall-version);
+        has Str     $.methodname;
+        has         %.args;
+        has         $.mirror;
     }
 
     class Response {
+        has Str     $.type;
+        has Version $.version       is marshalled-by('Str') is unmarshalled-by(&unmarshall-version);
+        has Str     $.servicename;
+        has Str     $.methodname;
+        has         $.result;
+        has         $.reflection;
     }
 }
 # vim: expandtab shiftwidth=4 ft=perl6
