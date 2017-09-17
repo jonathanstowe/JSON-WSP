@@ -1,0 +1,35 @@
+{
+  "name": "JSON::WSP",
+  "source-url": "https://github.com/jonathanstowe/JSON-WSP.git",
+  "support": {
+    "source": "https://github.com/jonathanstowe/JSON-WSP.git",
+    "email" : "jns+gh@gellfish.co.uk",
+    "bugtracker" : "https://github.com/jonathanstowe/JSON-WSP/issues"
+  },
+  "perl": "6.c",
+  "resources": [],
+  "build-depends": [],
+  "auth": "github:jonathanstowe",
+  "depends": [
+      "JSON::Class"
+  ],
+  "tags": [
+      "json",
+      "webservice",
+      "description",
+      "jsonwsp"
+  ],
+  "license": "Artistic-2.0",
+  "test-depends": [
+      "Test"
+  ],
+  "provides": {
+      "JSON::WSP" : "lib/JSON/WSP.pm"
+  },
+  "version": "0.0.1",
+  "meta-version": "0",
+  "authors": [
+      "Jonathan Stowe <jns+gh@gellyfish.co.uk>"
+  ],
+  "description": "Perl 6 implementation of the JSON WSP protocol"
+}
